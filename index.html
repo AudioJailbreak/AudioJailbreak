@@ -30,7 +30,7 @@
         margin: 0 auto;
     }
 
-    /* 通用章节标题样式 */
+    /*  */
     .section-header {
         color: var(--primary-color);
         border-bottom: 2px solid var(--secondary-color);
@@ -39,7 +39,7 @@
         font-size: 1.8rem;
     }
 
-    /* 表格样式 */
+    /*  */
     .research-table {
         table-layout: fixed;
         width: 100%;
@@ -67,7 +67,7 @@
         font-weight: 600;
     }
 
-    /* 列宽分配 */
+    /*  */
     .research-table th:nth-child(1),
     .research-table td:nth-child(1) { width: 20%; }
 
@@ -77,7 +77,7 @@
     .research-table th:nth-child(3),
     .research-table td:nth-child(3) { width: 45%; }
 
-    /* 音频通用样式 */
+    /*  */
     .audio-container {
         width: 100%;
         min-width: 200px;
@@ -88,7 +88,7 @@
         height: 40px;
     }
 
-    /* 其他章节样式 */
+    /*  */
     .audio-section {
         background: white;
         border-radius: 12px;
@@ -107,7 +107,7 @@
         border-radius: 8px;
     }
 
-    /* 响应式设计 */
+    /*  */
     @media (max-width: 768px) {
         .container {
             padding: 0 15px;
@@ -117,7 +117,7 @@
             font-size: 1.5rem;
         }
 
-        /* 表格移动端适配 */
+        /*  */
         .research-table,
         .research-table thead,
         .research-table tbody,
@@ -155,7 +155,7 @@
             font-weight: bold;
         }
 
-        /* 调整列宽显示 */
+        /*  */
         .research-table td:nth-child(1):before { content: "XXX"; }
         .research-table td:nth-child(2):before { content: "Audio"; }
         .research-table td:nth-child(3):before { content: "Response"; }
@@ -176,12 +176,12 @@
         }
     }
 
-    /* 悬停效果 */
+    /*  */
     .research-table tr:hover td {
         background-color: #f8f9fa;
     }
 
-        /* 添加在之前的style代码中 */
+        /*  */
 .research-table td[rowspan] {
     background-color: #f8f9fa;
     font-weight: 600;
@@ -191,19 +191,19 @@
     background-color: #fafafa;
 }
 
-/* 在原有样式基础上增加以下修改 */
+/*  */
 .research-table {
-    font-size: 0.9em; /* 整体缩小字体 */
-    line-height: 1.4; /* 减少行高 */
+    font-size: 0.9em; /*  */
+    line-height: 1.4; /*  */
 }
 
 .research-table th,
 .research-table td {
-    padding: 10px 12px; /* 减少内边距 */
-    min-width: 60px; /* 最小列宽限制 */
+    padding: 10px 12px; /*  */
+    min-width: 60px; /*  */
 }
 
-/* 调整列宽分配 */
+/*  */
 .research-table th:nth-child(1),
 .research-table td:nth-child(1) { 
     width: 12%; 
@@ -232,19 +232,19 @@
     padding-left: 10px;
 }
 
-/* 音频控件紧凑化 */
+/*  */
 audio {
     height: 32px;
     min-width: 180px;
 }
 
-/* 合并单元格样式优化 */
+/*  */
 .research-table td[rowspan] {
     padding: 6px 8px;
     font-size: 0.85em;
 }
 
-/* 移动端优化 */
+/*  */
 @media (max-width: 768px) {
     .research-table td {
         padding: 8px 10px;
@@ -273,7 +273,7 @@ audio {
     }
 }   
 
-/* GitHub 区块样式 */
+/* GitHub  */
 .github-section {
     background: #f8f9fa;
     padding: 4rem 0;
@@ -327,7 +327,7 @@ audio {
     font-size: 0.95rem;
 }
 
-/* 响应式设计 */
+/*  */
 @media (max-width: 768px) {
     .github-section {
         padding: 3rem 1rem;
@@ -371,7 +371,7 @@ audio {
             </thead>
             <tbody>
                 <tr>
-                    <td>Original</td>
+                    <td>Origin</td>
                     <td>
                         <div class="audio-container">
                             <audio controls>
@@ -387,7 +387,7 @@ audio {
                      <td>
                         <div class="audio-container">
                             <audio controls>
-                                <source src="audio/strong_base.wav" type="audio/mpeg">
+                                <source src="audio/strong_speed_1.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </div>
@@ -399,7 +399,7 @@ audio {
                      <td>
                         <div class="audio-container">
                             <audio controls>
-                                <source src="audio/strong_speed.wav" type="audio/mpeg">
+                                <source src="audio/strong_base_1.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </div>
@@ -411,7 +411,7 @@ audio {
                      <td>
                         <div class="audio-container">
                             <audio controls>
-                                <source src="audio/strong_soundeffect.wav" type="audio/mpeg">
+                                <source src="audio/strong_soundeffect_1.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </div>
@@ -423,7 +423,7 @@ audio {
                      <td>
                         <div class="audio-container">
                             <audio controls>
-                                <source src="audio/strong_music.wav" type="audio/mpeg">
+                                <source src="audio/strong_music_1.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </div>
@@ -438,140 +438,136 @@ audio {
         <table class="research-table">
     <thead>
         <tr>
-            <th>Type</th>
-            <th>Base Audio</th>
-            <th colspan="2">Attack Audio</th>
-            <th>Analysis</th>
+            <th>Scenario</th>
+            <th>User Speech</th>
+            <th colspan="2">Jailbreak Audio</th>
+            <th>Response</th>
         </tr>
     </thead>
     <tbody>
         <!-- YYY Section (Rows 2-7) -->
         <tr>
-            <td rowspan="6" style="vertical-align: middle">YYY</td>
+            <td rowspan="6" style="vertical-align: middle">Denial-of-Service (DoS)</td>
             <td rowspan="6">
                 <audio controls style="width: 100%">
-                    <source src="audio/base_yyy.mp3" type="audio/mpeg">
+                    <source src="audio/weak_1_user.wav" type="audio/mpeg">
                 </audio>
             </td>
-            <td>Attack 1</td>
+            <td>No Attack</td>
             <td>
-                <audio controls style="width: 100%">
-                    <source src="audio/attack1.mp3" type="audio/mpeg">
-                </audio>
+                No Attack
             </td>
-            <td>Baseline comparison text</td>
+            <td>response_todo</td>
         </tr>
         <tr>
-            <td>Attack 2</td>
+            <td>AudioJailbreak (Base)</td>
             <td>
                 <audio controls style="width: 100%">
-                    <source src="audio/attack2.mp3" type="audio/mpeg">
+                    <source src="audio/weak_1_base.wav" type="audio/mpeg">
                 </audio>
             </td>
-            <td>Frequency analysis results</td>
+            <td>response_todo</td>
         </tr>
         <tr>
-            <td>Attack 3</td>
+            <td>AudioJailbreak (Speeding-up)</td>
             <td>
                 <audio controls style="width: 100%">
-                    <source src="audio/attack3.mp3" type="audio/mpeg">
+                    <source src="audio/weak_1_speed.wav" type="audio/mpeg">
                 </audio>
             </td>
-            <td>Amplitude comparison</td>
+            <td>response_todo</td>
         </tr>
         <tr>
-            <td>Attack 4</td>
+            <td>AudioJailbreak (Benign)</td>
             <td>
                 <audio controls style="width: 100%">
-                    <source src="audio/attack4.mp3" type="audio/mpeg">
+                    <source src="audio/weak_1_benign.wav" type="audio/mpeg">
                 </audio>
             </td>
-            <td>Noise floor analysis</td>
+            <td>response_todo</td>
         </tr>
         <tr>
-            <td>Attack 5</td>
+            <td>AudioJailbreak (Sound-Effect)</td>
             <td>
                 <audio controls style="width: 100%">
-                    <source src="audio/attack5.mp3" type="audio/mpeg">
+                    <source src="audio/weak_1_soundeffect.wav" type="audio/mpeg">
                 </audio>
             </td>
-            <td>Phase distortion metrics</td>
+            <td>response_todo</td>
         </tr>
         <tr>
-            <td>Attack 6</td>
+            <td>AudioJailbreak (Background-Music)</td>
             <td>
                 <audio controls style="width: 100%">
-                    <source src="audio/attack6.mp3" type="audio/mpeg">
+                    <source src="audio/weak_1_music.wav" type="audio/mpeg">
                 </audio>
             </td>
-            <td>Final evaluation summary</td>
+            <td>response_todo</td>
         </tr>
 
         <!-- ZZZ Section (Rows 8-13) -->
         <tr>
-            <td rowspan="6" style="vertical-align: middle">ZZZ</td>
+            <td rowspan="6" style="vertical-align: middle">Hateful Speech</td>
             <td rowspan="6">
                 <audio controls style="width: 100%">
-                    <source src="audio/base_zzz.mp3" type="audio/mpeg">
+                    <source src="audio/weak_2_user.wav" type="audio/mpeg">
                 </audio>
             </td>
-            <td>Variant A</td>
+            <td>No Attack</td>
             <td>
-                <audio controls style="width: 100%">
-                    <source src="audio/variant_a.mp3" type="audio/mpeg">
-                </audio>
+                No Attack
             </td>
-            <td>Modified parameters analysis</td>
+            <td>response_todo</td>
         </tr>
         <tr>
-            <td>Variant B</td>
+            <td>AudioJailbreak (Base)</td>
             <td>
                 <audio controls style="width: 100%">
-                    <source src="audio/variant_b.mp3" type="audio/mpeg">
+                    <source src="audio/weak_2_base.wav" type="audio/mpeg">
                 </audio>
             </td>
-            <td>Compression artifacts</td>
+            <td>response_todo</td>
         </tr>
         <tr>
-            <td>Variant C</td>
+            <td>AudioJailbreak (Speeding-up)</td>
             <td>
                 <audio controls style="width: 100%">
-                    <source src="audio/variant_c.mp3" type="audio/mpeg">
+                    <source src="audio/weak_2_speed.wav" type="audio/mpeg">
                 </audio>
             </td>
-            <td>Bitrate comparison</td>
+            <td>response_todo</td>
         </tr>
         <tr>
-            <td>Variant D</td>
+            <td>AudioJailbreak (Benign)</td>
             <td>
                 <audio controls style="width: 100%">
-                    <source src="audio/variant_d.mp3" type="audio/mpeg">
+                    <source src="audio/weak_2_benign.wav" type="audio/mpeg">
                 </audio>
             </td>
-            <td>Dynamic range test</td>
+            <td>response_todo</td>
         </tr>
         <tr>
-            <td>Variant E</td>
+            <td>AudioJailbreak (Sound-Effect)</td>
             <td>
                 <audio controls style="width: 100%">
-                    <source src="audio/variant_e.mp3" type="audio/mpeg">
+                    <source src="audio/weak_2_soundeffect.wav" type="audio/mpeg">
                 </audio>
             </td>
-            <td>Resampling analysis</td>
+            <td>response_todo</td>
         </tr>
         <tr>
-            <td>Variant F</td>
+            <td>AudioJailbreak (Background-Music)</td>
             <td>
                 <audio controls style="width: 100%">
-                    <source src="audio/variant_f.mp3" type="audio/mpeg">
+                    <source src="audio/weak_2_music.wav" type="audio/mpeg">
                 </audio>
             </td>
-            <td>Final optimization results</td>
+            <td>response_todo</td>
         </tr>
     </tbody>
 </table>
         
-<!-- 在容器结束标签前添加以下代码 -->
+<!--  -->
 <!-- <section class="github-section"> -->
     <div class="container">
         <h2 class="section-header">Code Repository</h2>
