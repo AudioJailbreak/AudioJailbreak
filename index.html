@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Research Project</title>
+    <style>
+    :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --background: #f8f9fa;
+        --table-border: #e0e0e0;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+        background-color: var(--background);
+        line-height: 1.6;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* 通用章节标题样式 */
+    .section-header {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 10px;
+        margin: 30px 0 20px;
+        font-size: 1.8rem;
+    }
+
+    /* 表格样式 */
+    .research-table {
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+    }
+
+    .research-table th,
+    .research-table td {
+        text-align: center;
+        vertical-align: middle;
+        padding: 15px;
+        border-bottom: 1px solid var(--table-border);
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    .research-table th {
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: 600;
+    }
+
+    /* 列宽分配 */
+    .research-table th:nth-child(1),
+    .research-table td:nth-child(1) { width: 20%; }
+
+    .research-table th:nth-child(2),
+    .research-table td:nth-child(2) { width: 35%; }
+
+    .research-table th:nth-child(3),
+    .research-table td:nth-child(3) { width: 45%; }
+
+    /* 音频通用样式 */
+    .audio-container {
+        width: 100%;
+        min-width: 200px;
+    }
+
+    audio {
+        width: 100%;
+        height: 40px;
+    }
+
+    /* 其他章节样式 */
+    .audio-section {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+        padding: 20px;
+    }
+
+    .audio-item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 15px 0;
+        padding: 15px;
+        background: #f1f3f5;
+        border-radius: 8px;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 15px;
+        }
+
+        .section-header {
+            font-size: 1.5rem;
+        }
+
+        /* 表格移动端适配 */
+        .research-table,
+        .research-table thead,
+        .research-table tbody,
+        .research-table th,
+        .research-table td,
+        .research-table tr {
+            display: block;
+        }
+
+        .research-table thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        .research-table tr {
+            border: 1px solid var(--table-border);
+            margin-bottom: 15px;
+        }
+
+        .research-table td {
+            border: none;
+            position: relative;
+            padding-left: 40%;
+            text-align: left;
+        }
+
+        .research-table td:before {
+            position: absolute;
+            left: 10px;
+            width: 35%;
+            padding-right: 10px;
+            white-space: nowrap;
+            content: attr(data-label);
+            font-weight: bold;
+        }
+
+        /* 调整列宽显示 */
+        .research-table td:nth-child(1):before { content: "XXX"; }
+        .research-table td:nth-child(2):before { content: "Audio"; }
+        .research-table td:nth-child(3):before { content: "Response"; }
+    }
+
+    @media (max-width: 480px) {
+        body {
+            padding: 10px;
+        }
+
+        .research-table td {
+            padding: 12px;
+            font-size: 0.9rem;
+        }
+
+        audio::-webkit-media-controls-panel {
+            padding: 5px;
+        }
+    }
+
+    /* 悬停效果 */
+    .research-table tr:hover td {
+        background-color: #f8f9fa;
+    }
+
+        /* 添加在之前的style代码中 */
+.research-table td[rowspan] {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.research-table tr:nth-child(even) td:not([rowspan]) {
+    background-color: #fafafa;
+}
+
+/* 在原有样式基础上增加以下修改 */
+.research-table {
+    font-size: 0.9em; /* 整体缩小字体 */
+    line-height: 1.4; /* 减少行高 */
+}
+
+.research-table th,
+.research-table td {
+    padding: 10px 12px; /* 减少内边距 */
+    min-width: 60px; /* 最小列宽限制 */
+}
+
+/* 调整列宽分配 */
+.research-table th:nth-child(1),
+.research-table td:nth-child(1) { 
+    width: 12%; 
+    padding-right: 5px;
+}
+
+.research-table th:nth-child(2),
+.research-table td:nth-child(2) { 
+    width: 18%; 
+}
+
+.research-table th:nth-child(3),
+.research-table td:nth-child(3) { 
+    width: 25%; 
+    padding: 8px 10px;
+}
+
+.research-table th:nth-child(4),
+.research-table td:nth-child(4) { 
+    width: 25%; 
+}
+
+.research-table th:nth-child(5),
+.research-table td:nth-child(5) { 
+    width: 20%; 
+    padding-left: 10px;
+}
+
+/* 音频控件紧凑化 */
+audio {
+    height: 32px;
+    min-width: 180px;
+}
+
+/* 合并单元格样式优化 */
+.research-table td[rowspan] {
+    padding: 6px 8px;
+    font-size: 0.85em;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .research-table td {
+        padding: 8px 10px;
+        font-size: 0.82em;
+    }
+    
+    .research-table td:before {
+        font-size: 0.85em;
+        left: 5px;
+    }
+    
+    audio {
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .research-table td {
+        padding-left: 35%;
+        padding: 6px 8px 6px 35%;
+    }
+    
+    .research-table td:before {
+        width: 30%;
+        left: 5px;
+    }
+}   
+</style>
+</head>
+<body>
+    <div class="container">
+        <!-- Strong Adversary Section -->
+        <h2 class="section-header">Strong Adversary</h2>
+        <table class="research-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Audio</th>
+                    <th>Response</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Original</td>
+                    <td>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="audio/strong_origin.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </td>
+                    <td class="text-content">Sorry, I cannot give you the answer</td>
+                </tr>
+                <tr>
+                    <td>AudioJailbreak (Base)</td>
+                     <td>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="audio/strong_base.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </td>
+                    <td class="text-content">Sure, </td>
+                </tr>
+                <tr>
+                    <td>AudioJailbreak (Speeding-up)</td>
+                     <td>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="audio/strong_speed.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </td>
+                    <td class="text-content">Sure, </td>
+                </tr>
+                <tr>
+                    <td>AudioJailbreak (Sound-Effect)</td>
+                     <td>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="audio/strong_soundeffect.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </td>
+                    <td class="text-content">Sure, </td>
+                </tr>
+                <tr>
+                    <td>AudioJailbreak (Background-Music)</td>
+                     <td>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="audio/strong_music.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </td>
+                    <td class="text-content">Sure, </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Weak Adversary Section -->
+        <h2 class="section-header">Weak Adversary</h2>
+        <table class="research-table">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Base Audio</th>
+            <th colspan="2">Attack Audio</th>
+            <th>Analysis</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- YYY Section (Rows 2-7) -->
+        <tr>
+            <td rowspan="6" style="vertical-align: middle">YYY</td>
+            <td rowspan="6">
+                <audio controls style="width: 100%">
+                    <source src="audio/base_yyy.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Attack 1</td>
+            <td>
+                <audio controls style="width: 100%">
+                    <source src="audio/attack1.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Baseline comparison text</td>
+        </tr>
+        <tr>
+            <td>Attack 2</td>
+            <td>
+                <audio controls style="width: 100%">
+                    <source src="audio/attack2.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Frequency analysis results</td>
+        </tr>
+        <tr>
+            <td>Attack 3</td>
+            <td>
+                <audio controls style="width: 100%">
+                    <source src="audio/attack3.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Amplitude comparison</td>
+        </tr>
+        <tr>
+            <td>Attack 4</td>
+            <td>
+                <audio controls style="width: 100%">
+                    <source src="audio/attack4.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Noise floor analysis</td>
+        </tr>
+        <tr>
+            <td>Attack 5</td>
+            <td>
+                <audio controls style="width: 100%">
+                    <source src="audio/attack5.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Phase distortion metrics</td>
+        </tr>
+        <tr>
+            <td>Attack 6</td>
+            <td>
+                <audio controls style="width: 100%">
+                    <source src="audio/attack6.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Final evaluation summary</td>
+        </tr>
+
+        <!-- ZZZ Section (Rows 8-13) -->
+        <tr>
+            <td rowspan="6" style="vertical-align: middle">ZZZ</td>
+            <td rowspan="6">
+                <audio controls style="width: 100%">
+                    <source src="audio/base_zzz.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Variant A</td>
+            <td>
+                <audio controls style="width: 100%">
+                    <source src="audio/variant_a.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Modified parameters analysis</td>
+        </tr>
+        <tr>
+            <td>Variant B</td>
+            <td>
+                <audio controls style="width: 100%">
+                    <source src="audio/variant_b.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Compression artifacts</td>
+        </tr>
+        <tr>
+            <td>Variant C</td>
+            <td>
+                <audio controls style="width: 100%">
+                    <source src="audio/variant_c.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Bitrate comparison</td>
+        </tr>
+        <tr>
+            <td>Variant D</td>
+            <td>
+                <audio controls style="width: 100%">
+                    <source src="audio/variant_d.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Dynamic range test</td>
+        </tr>
+        <tr>
+            <td>Variant E</td>
+            <td>
+                <audio controls style="width: 100%">
+                    <source src="audio/variant_e.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Resampling analysis</td>
+        </tr>
+        <tr>
+            <td>Variant F</td>
+            <td>
+                <audio controls style="width: 100%">
+                    <source src="audio/variant_f.mp3" type="audio/mpeg">
+                </audio>
+            </td>
+            <td>Final optimization results</td>
+        </tr>
+    </tbody>
+</table>
+        
+    </div>
+</body>
+</html>
