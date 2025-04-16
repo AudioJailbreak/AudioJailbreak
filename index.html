@@ -355,9 +355,88 @@ audio {
     }
 }
 
+/* 头部样式 */
+.main-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    padding: 4rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.site-title {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.title-decoration {
+    width: 120px;
+    height: 4px;
+    background: #e74c3c;
+    margin: 1.5rem auto;
+    border-radius: 2px;
+    opacity: 0.9;
+}
+
+/* 悬停动画 */
+.site-title:hover {
+    transform: translateY(-2px);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 2.8rem;
+        letter-spacing: -0.5px;
+    }
+    
+    .main-header {
+        padding: 3rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .title-decoration {
+        width: 80px;
+        height: 3px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-title {
+        transition: none;
+    }
+}
+
 </style>
 </head>
 <body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <h1 class="site-title">AudioJailbreak</h1>
+            <div class="title-decoration"></div>
+        </div>
+    </header>
+    
     <div class="container">
         <!-- Strong Adversary Section -->
         <h2 class="section-header">Strong Adversary</h2>
