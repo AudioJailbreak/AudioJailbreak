@@ -44,10 +44,6 @@ python generate.py
 ```
 
 ```shell
-python get_rsp.py -type no_attack; python eval.py -type no_attack; python analyse.py -type no_attack
-```
-
-```shell
 python get_rsp.py; python eval.py; python analyse.py
 ```
 
